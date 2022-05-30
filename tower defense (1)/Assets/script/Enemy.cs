@@ -6,8 +6,7 @@ public class Enemy : MonoBehaviour
 {
   [SerializeField] private float enemyHealth;
    [SerializeField]private float movementSpeed;
-   private int killReward;
-   private int damage;
+   
 
    private GameObject targetTile;
    private void Awake()
