@@ -23,7 +23,7 @@ public class MapGenerator : MonoBehaviour
    {
        GenerateMap();
    }
-   private List<GameObject> getTopEdgeTiles()
+   private List<GameObject> getTopEdgeTiles() //choose a random tile at the top to make spawn tile
    {
           List<GameObject> edgeTiles = new List<GameObject>();
           for (int i = mapWidth * (mapHeight-1); i< mapWidth * mapHeight;i++)
@@ -32,7 +32,7 @@ public class MapGenerator : MonoBehaviour
                 }
           return edgeTiles;
    }
-   private List<GameObject> getbottomedgeTiles ()
+   private List<GameObject> getbottomedgeTiles () //choose a random tile at the bottom to make finish line
    {
           List<GameObject> edgeTiles = new List<GameObject>();
           for (int i = 0; i < mapWidth;i++)
@@ -41,28 +41,28 @@ public class MapGenerator : MonoBehaviour
           }
          return edgeTiles;
    }
-   private void moveDown()
+   private void moveDown() //move the path down
    {
         PathTiles.Add(currentTile);
         CurrentIndex= MapTiles.IndexOf(currentTile);
         NextIntdex = CurrentIndex-mapWidth;
         currentTile = MapTiles[NextIntdex];
    }
-   private void moveLeft()
+   private void moveLeft() //move the path left
    {
         PathTiles.Add(currentTile);
         CurrentIndex= MapTiles.IndexOf(currentTile);
         NextIntdex = CurrentIndex-1;
         currentTile = MapTiles[NextIntdex];
    }
-   private void moveRight()
+   private void moveRight() //move the path right
    {
         PathTiles.Add(currentTile);
         CurrentIndex= MapTiles.IndexOf(currentTile);
         NextIntdex = CurrentIndex+1;
         currentTile = MapTiles[NextIntdex];
    }
-    private void GenerateMap() //creating many variables called MapTile according to mapHeight and mapWidth
+    private void GenerateMap() //creating many variables to make a map,path,start and finish line, according to mapHeight and mapWidth
     {
         for (int y = 0; y < mapHeight; y++)
         {
@@ -115,7 +115,7 @@ public class MapGenerator : MonoBehaviour
             
         }
         PathTiles.Add(endTile);
-        foreach(GameObject obj in PathTiles)
+        foreach(GameObject obj in PathTiles) //adding color to path,start and end tile
         {
             obj.GetComponent<SpriteRenderer>().color = pathColor;
         }
