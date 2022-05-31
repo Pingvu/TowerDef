@@ -43,7 +43,7 @@ nextTimeToShoot = Time.time;
      enemyScript.takeDamage(damage);
  
    }
-   private void Update()// Run methods, making the tower shoot at the nearest enemy
+   private void Update()// Run methods, making the tower shoot at the nearest enemy and also setting its shooting speed
    {
      updateNearestEnemy();
      if(Time.time >= nextTimeToShoot)
