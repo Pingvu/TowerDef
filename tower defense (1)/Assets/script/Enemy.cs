@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
    
 
    private GameObject targetTile;
-   private void Awake() 
+   private void Awake() //setting up the list Enemies
    {
       Enemies.enemies.Add(gameObject);
    }
