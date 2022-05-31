@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
-{
+{ //Creating variables
   [SerializeField] private float range;
    [SerializeField]private float damage;
    [SerializeField] private float timeBetweenShots;
@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
    {
 nextTimeToShoot = Time.time;
    }
-   private void updateNearestEnemy ()
+   private void updateNearestEnemy () //Detect the nearest enemy
    {
        GameObject currentNearestEnemy = null;
        float distance = Mathf.Infinity;
@@ -36,14 +36,14 @@ nextTimeToShoot = Time.time;
            currentTarget = null;
        }
    }
-   protected virtual void shoot ()
+   protected virtual void shoot () //the tower will shoot at the enemy, making it take dmg
    {
  
      Enemy enemyScript = currentTarget.GetComponent<Enemy>();
      enemyScript.takeDamage(damage);
  
    }
-   private void Update()
+   private void Update()// Run methods, making the tower shoot at the nearest enemy
    {
      updateNearestEnemy();
      if(Time.time >= nextTimeToShoot)
