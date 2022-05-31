@@ -6,7 +6,7 @@ public class BasicTower : Tower //inheritance, this script will now have everyth
 {   public GameObject bullet;
 public Transform pivot;
 public Transform barrel;
-    protected override void shoot()
+    protected override void shoot() //the tower will shoot a bullet
     {
         base.shoot();
         GameObject newbullet = Instantiate(bullet, barrel.position,pivot.rotation);
