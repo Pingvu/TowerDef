@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicTower : Tower
+public class BasicTower : Tower //inheritance, this script will now have everything in the Tower script
 {   public GameObject bullet;
 public Transform pivot;
 public Transform barrel;
