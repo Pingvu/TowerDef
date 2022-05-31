@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BarrelRotation : MonoBehaviour
-{
+{  //Creating varialbes
    public Transform pivot;
    public Transform barrel;
    public Tower tower;
-   private void Update()
+   private void Update() //the barrel will rotate according to where the tower shooting at
    {
        if (tower != null)
        {
