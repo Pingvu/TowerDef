@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
-{
+{    //Creating variables
     public GameObject basicEnemy;
     public float timeBetweenWaves;
     public float timeBeforeRoundStart;
@@ -12,7 +12,7 @@ public class RoundController : MonoBehaviour
     public bool isIntermission;
     public bool isStartOfRound;
     public int round;
-    private void Start()
+    private void Start() //setting variables value
     {
         isRoundGoing =false;
         isIntermission = false;
@@ -20,11 +20,11 @@ public class RoundController : MonoBehaviour
         timeVariable= Time.time + timeBeforeRoundStart;
         round = 1;
     }
-    private void spawnEnemies()
+    private void spawnEnemies() //Run the Coroutine ISpawnEnemies
     {
      StartCoroutine("ISpawnEnemies");
     }
-    IEnumerator ISpawnEnemies()
+    IEnumerator ISpawnEnemies() //Spawn enemies at the startTile
     {
       for (int i = 0; i< round; i++)
       {
@@ -34,7 +34,7 @@ public class RoundController : MonoBehaviour
     }
     private void Update()
     {
-        if(isStartOfRound)
+        if(isStartOfRound)//at the start of the round, do the method spawnEnemies
         {
              if (Time.time >= timeVariable)
              {
@@ -52,7 +52,7 @@ public class RoundController : MonoBehaviour
                spawnEnemies();
            }
         }
-        else if (isRoundGoing){
+        else if (isRoundGoing){ //check the enemies remaining,if there are still some enemies, do nothing,if the enemies is all dead, go to the next round
              if(Enemies.enemies.Count >0){
 
 
